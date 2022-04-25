@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calcul mental</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="entete">
+        <div class="bouton"><a href="/">Accueil</a></div>
+        <div class="bouton"><a href="{{ url_for('classement') }}">Classement</a></div>
+    </div>
+    <h1 id="titre"><a href="{{ url_for('static', filename='Accueil.html') }}"></a>Calcul Mental</h1>
+    <h2>{{ calcul_juste }} / 10</h2>
+    <form action="/resultat/" method="POST">
+        <div>
+            <h3>Vous pouvez vous enregistrer, pour cela entrez votre pseudo : </h3>
+            <input type="text" id="nom" name="nom" autofocus>
+            <input type="submit" name="suivant"  value="Valider">
+        </div>
+        <input type="hidden" name="score" value="{{ calcul_juste }}">
+        
+    </form>
+</body>
+</html>

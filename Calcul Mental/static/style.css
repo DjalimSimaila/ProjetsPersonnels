@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: greenyellow; /* a changer j'aime pas trop cette couleur en vrai*/
+  background-image: url(./licence_free_background.jpg);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li{
+  font-size: 20px;
+}
+
+h1 {
+  text-align:center;
+  font-size: 54px;
+}
+
+h2 {
+  text-align:center;
+  font-size: 60px;
+  opacity: 1.0;
+}
+
+h3 {
+  text-align:center;
+  font-size: 30px;
+  opacity: 1.0;
+}
+#principale {
+  width: 951px;
+  margin: auto;
+  display: flex;
+}
+
+.secondaires {
+  width: 425px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border: 0px solid black;
+  border-radius: 40px;
+  padding: 15px;
+  background-color: greenyellow;
+  opacity: 0.7;
+}
+
+.secondaires:hover {
+  opacity: 1.0;
+}
+
+.checkboxes {
+width: 200px;
+margin: auto;
+opacity: 1.0;
+}
+
+#calcul {
+  width: 301px;
+  margin: auto;
+}
+
+.start {
+  margin-top: 25px;
+}
+
+#boite_qcm {
+  width: 525px;
+  margin: auto;
+}
+
+#liste_qcm_reponces {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.qcm_reponses {
+  width: 200px;
+  margin: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#titre {
+  border: 3px solid black;
+  border-radius: 12px;
+  width: 508px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#accueil {
+  border: 3px solid black;
+  border-radius: 12px;
+  width: fit-content;
+  margin: auto;
+  padding: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+p {
+  text-align:center;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px black solid;
+  font: 12px sans-serif;
+}
+
+td {
+  border: 1px black solid;
+  padding: 10px;
+  font-size: 28px;
+  text-align: center;
+  width: calc(100% + 5px);
+}
+
+#classement {
+  margin:0 auto;
+  display: table;
+}
+
+#entete {
+  width: auto;
+  background-color: #00701a;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+}
+
+.bouton {
+  width: 120px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 55px;
+  padding: 18px;
+  background-color: #43a047;
+}
+
+.bouton:hover{
+  background-color: #76d275;
+}
+

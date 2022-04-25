@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calcul mental</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="entete">
+        <div class="bouton"><a href="/">Accueil</a></div>
+        <div class="bouton"><a href="{{ url_for('classement') }}">Classement</a></div>
+    </div>
+    <h1 id="acceuil">Bienvenue sur notre site de calcul mental</h1>
+    <div id="principale">
+        <div class=secondaires>
+            <h2>Classique</h2>
+            <h3>Difficulté</h3>
+            <form action="/commencer_classique/" method="POST">
+                <div class="checkboxes">
+                    <ul>
+                        <!-- je prefere utiliser des valeur numerique dans le cas ou on devrais les utiliser pour des calculs de difficulté -->
+                        <li><input type="radio" name="radio" id="difficulte" value="0" checked> facile</li>
+                        <li><input type="radio" name="radio" id="difficulte" value="1"> normal</li>
+                        <li><input type="radio" name="radio" id="difficulte" value="2"> difficile</li>
+                        <li><input class=start type="submit" name="commencer_classique"  value="commencer"></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class=secondaires>
+            <h2>QCM</h2>
+            <h3>Difficulté</h3>
+            <form action="commencer_qcm/" method="POST">
+                <div class="checkboxes">
+                    <ul>
+                        <li><input type="radio" name="radio" id="difficulte" value="0" checked > facile</li>
+                        <li><input type="radio" name="radio" id="difficulte" value="1"> normal</li>
+                        <li><input type="radio" name="radio" id="difficulte" value="2"> difficile</li>
+                        <input class=start type="submit" name="commencer_qcm"  value="commencer">
+                    </ul><!-- voir si il a pas un moyer de fusioner les 2 methodes post-->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="entete">
+            <div class="bouton"><a href="/">Accueil</a></div>
+            <div class="bouton"><a href="{{ url_for('classement') }}">Classement</a></div>
+        </div>
+        <h1 id="titre"><a  href="/"></a>Calcul Mental</h1>
+        <h1>{{ms}}</h1>
+        <h1>Top 10</h1>
+        <div id="classement">
+        </div>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <!--<script src="d3.min.js?v=3.2.8"></script> -->
+ 
+        <script type="text/javascript"charset="utf-8">
+            
+            d3.text("{{ url_for('static',filename='Score_classement.csv')}}", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("#classement")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+
+        </script>
+        <form action="/classement/" method="POST">
+        </form>
+    </body>
+</html>

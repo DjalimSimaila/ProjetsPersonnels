@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calcul mental</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div id="entete">
+        <div class="bouton"><a href="/">Accueil</a></div>
+        <div class="bouton"><a href="{{ url_for('classement') }}">Classement</a></div>
+    </div>
+    <h1 id="titre"><a  href="/"></a>Calcul Mental</h1>
+    <p>Calcul {{ numero }} sur 10 </p>
+    <h1>{{ calcul }}</h1>
+    <form action="/suivant/" method="POST">
+        <div id="boite_qcm">
+            <ul id="liste_qcm_reponces">
+                <li class=qcm_reponses><input type="radio" name="resultat" id="resultat" value="{{ rep1 }}"> {{ rep1 }}</li>
+                <li class=qcm_reponses><input type="radio" name="resultat" id="resultat" value="{{ rep2 }}"> {{ rep2 }}</li>
+                <li class=qcm_reponses><input type="radio" name="resultat" id="resultat" value="{{ rep3 }}"> {{ rep3 }}</li>
+                <li class=qcm_reponses><input type="radio" name="resultat" id="resultat" value="{{ rep4 }}"> {{ rep4 }}</li>
+            </ul>
+            <input type="hidden" name="difficulte" value="{{ difficulte }}">
+            <input type="hidden" name="type" value="qcm">
+            <input type="hidden" name="calcul" value="{{ calcul }}">
+            <input type="hidden" name="operation" value="{{ operation }}">
+            <input type="hidden" name="numero" value="{{ numero }}">
+            <input type="hidden" name="calcul_juste" value="{{ calcul_juste }}">
+            <input type="submit" name="suivant"  value="suivant">
+        </div>
+    </form>
+</body>
+</html>

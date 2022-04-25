@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+    
+    <div id='postco'>
+        <div id=amis><em>amis</em></div>
+        <div id=groupes><em>groupes</em></div>
+        <div id=messages><em>messages</em></div>
+        <label for="text_box">Message :</label>
+        <input type="text" id="text_box" name="text_box" size="10">
+        <button id='envoyer' onclick=envoyer(document.getElementById('text_box').value)>Envoyer</button>
+        <input type=hidden id='groupe_id' value=''>
+    </div>
+    
+    <div id='connexion'>
+        <h1> Connexion </h1>
+        <label for="pseudo">Pseudo :</label>
+        <input type="text" id="pseudo" name="pseudo" size="10">
+        <label for="mdp">Mot de passe :</label>
+        <input type="password" id="mdp" name="mdp" size="10">
+        <button type="button" id='valider_cnx'> Valider </button>
+        <script src={{url_for('static', filename='fonction_connexion.js')}}></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <input type=hidden id='reponse' value=''>
+        <input id="valider" type="hidden">
+        <input type=hidden id='user_id' value=''>
+    </div>
+
+</body>
+
+</html>
